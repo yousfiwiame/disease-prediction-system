@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  disease-prediction-app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./models:/app/models
+      - ./datasets:/app/datasets
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
